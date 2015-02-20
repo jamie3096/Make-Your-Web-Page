@@ -1,0 +1,59 @@
+.title {
+	font-size: 57px;
+	text-align: center; 
+	color: black;
+	font-family: ariel;
+	background-color: grey;
+	height: 80px;
+	line-height: 1.5;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.body {
+	height:auto;
+	width:auto;
+
+}
+.subtitle {
+	font-size: 30px;
+	line-height: 1;
+	text-align: left; 
+	color: black;
+	font-family: ariel;
+	background-color: white;
+	height: 40px;
+	margin-bottom:0;
+	margin-top:0;
+	background-color:grey;
+	text-align:center;
+	font-weight: normal;
+	border-bottom: solid;
+}
+
+.notes {
+	height: 600px;
+	margin-left: 150px;
+	background:rgb(213, 214, 219);
+	padding-left:6px;
+}
+
+.links {
+	float: left;
+	height:600px;
+	width:150px;
+	color:black;
+	background:rgb(219, 216, 213);
+	border-right: solid;
+	padding-left:4px;
+}
+
+.tags{
+	text-indent: 25px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
