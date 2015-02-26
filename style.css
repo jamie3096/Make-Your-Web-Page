@@ -13,8 +13,8 @@
 .body {
 	height:auto;
 	width:auto;
-
 }
+
 .subtitle {
 	font-size: 30px;
 	line-height: 1;
@@ -35,7 +35,7 @@
 	height: 600px;
 	margin-left: 150px;
 	background:rgb(213, 214, 219);
-	padding-left:6px;
+	padding-left:30px;
 }
 
 .links {
@@ -45,15 +45,13 @@
 	color:black;
 	background:rgb(219, 216, 213);
 	border-right: solid;
-	padding-left:4px;
+	padding-left:18px;
+	margin-top: 0px;
+	margin-bottom:0px;
+	padding-left: 20px;
+	padding-top: 20px;
 }
 
 .tags{
 	text-indent: 25px;
 }
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
