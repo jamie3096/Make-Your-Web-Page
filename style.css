@@ -32,15 +32,16 @@
 }
 
 .notes {
-	height: 600px;
+	height: 1200px;
 	margin-left: 150px;
 	background:rgb(213, 214, 219);
 	padding-left:30px;
+	padding-bottom:20px;
 }
 
 .links {
 	float: left;
-	height:600px;
+	height:1200px;
 	width:150px;
 	color:black;
 	background:rgb(219, 216, 213);
