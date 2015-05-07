@@ -5,7 +5,6 @@ import urllib
 
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),autoescape = True)
 
-
 class Handler(webapp2.RequestHandler):
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
@@ -19,6 +18,12 @@ class Handler(webapp2.RequestHandler):
 
 class MainPage(Handler):
     def get(self):
+        items = self.request.get_all("notes")
+        if items and not items[0]:
+            del items[0]
+        self.render("Add_Notes.html", items = items)
+
+    def post(self):
         items = self.request.get_all("notes")
         self.render("Add_Notes.html", items = items)
 
