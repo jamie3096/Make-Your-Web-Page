@@ -1,0 +1,19 @@
+
+{% extends "ClassNotes.html" %}
+{% block content %}
+
+<form method="post">
+    <h2>Add a Note</h2>
+    <input type="text" name="note">
+    <button>Add Note</button>
+    {% if items %}
+    {% for item in items %}
+    <div>
+        {{ item.note }}
+    </div>
+    {% endfor %}
+    {% endif %}
+</form>
+
+{% endblock %}
+
