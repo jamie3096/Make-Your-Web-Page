@@ -1,9 +1,15 @@
 import os
 import webapp2
 import jinja2
-import urllib
+from google.appengine.ext import ndb
 
-jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),autoescape = True)
+jinja_env = jinja2.Environment(
+    autoescape=False,
+    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__),'templates'))
+)
+
+class Notes(ndb.Model):
+    note = ndb.StringProperty(required=True)
 
 class Handler(webapp2.RequestHandler):
     def write(self, *a, **kw):
@@ -18,15 +24,19 @@ class Handler(webapp2.RequestHandler):
 
 class MainPage(Handler):
     def get(self):
-        items = self.request.get_all("notes")
-        if items and not items[0]:
-            del items[0]
-        self.render("Add_Notes.html", items = items)
+        items = Notes.query().fetch()
+        self.render("Add_Notes.html", items=items)
 
     def post(self):
-        items = self.request.get_all("notes")
-        self.render("Add_Notes.html", items = items)
-
+        items = self.request.get("note")
+        if not items:
+            self.response.out.write('<b>Please add a note before hitting add!</b>')
+        else:
+            note = Notes(note=items)
+            note.put()
+        items = Notes.query().fetch()
+        self.render("Add_Notes.html", items=items)
+        
 app = webapp2.WSGIApplication([('/', MainPage),
                                ],
                               debug=True)
